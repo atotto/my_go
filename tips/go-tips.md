@@ -17,6 +17,23 @@ _ (アンダースコア)に代入しましょう
 
 復習: http://go-tour-jp.appspot.com/#34 
 
+### 例外(Exception)みたいなのやりたい
+
+Goには例外はありません。
+代わりに、panicがあります。ランタイムエラーを扱うときに使います。
+Javaの例外とは違い、回復を望まないような時に使いましょう。
+一般的なエラーは返り値のerrorで返しましょう。
+
+参考: http://golang.org/doc/articles/defer_panic_recover.html
+
+ちなみに、 recover はリカバリするのが安全だという確信がなければ使わないようにすべきです。
+
+### finallyのような動きをさせたい
+
+defer文を使いましょう。Javaでいうところのfinallyと似た使い方もできます。
+
+参考： http://golang.org/doc/articles/defer_panic_recover.html
+
 ## go コマンド
 
 ### example_test.go にあるサンプルを直接実行したい
