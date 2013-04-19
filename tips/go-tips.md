@@ -34,6 +34,27 @@ defer文を使いましょう。Javaでいうところのfinallyと似た使い�
 
 参考： http://golang.org/doc/articles/defer_panic_recover.html
 
+### JavaでいうところのStringBufferなのが欲しい
+
+byte.BufferのWeiteStringを使いましょう。
+
+    package main
+    
+    import "bytes"
+    
+    func main() {
+        var buffer bytes.Buffer
+    
+        for i := 0; i < 1000; i++ {
+            buffer.WriteString("a")
+        }
+    
+        println(buffer.String())
+    }
+
+参考: http://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go
+
+
 ## go コマンド
 
 ### example_test.go にあるサンプルを直接実行したい
