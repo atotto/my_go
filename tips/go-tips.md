@@ -36,7 +36,7 @@ defer文を使いましょう。Javaでいうところのfinallyと似た使い�
 
 ### JavaでいうところのStringBufferなのが欲しい
 
-byte.BufferのWeiteStringを使いましょう。
+byte.BufferのWriteStringを使いましょう。
 
     package main
     
