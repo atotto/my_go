@@ -68,12 +68,11 @@ byte.BufferのWriteStringを使いましょう。
 ### benchmarkを取りたい
 
 とりあえず、参考URLみて。 
-
-TODO: あとで詳しく書くかも？ 
-
 参考: http://golang.org/pkg/testing/#Benchmarks
 
-### 
+例えば、BenchXXXなベンチマーク関数をメモリベンチマークと共にとる場合は：
+
+    $ go test -test.bench Bench -test.benchmem
 
 
 ## パッケージ
