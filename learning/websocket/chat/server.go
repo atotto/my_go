@@ -15,8 +15,13 @@ type Serv struct {
 	conns      map[*Connection]bool
 	register   chan *Connection
 	unregister chan *Connection
-	message    chan string
+	message    chan letter
 	name       string
+}
+
+type letter struct {
+	from *websocket.Conn
+	body string
 }
 
 func New(servname string) *Serv {
@@ -25,7 +30,7 @@ func New(servname string) *Serv {
 	s.conns = make(map[*Connection]bool)
 	s.register = make(chan *Connection)
 	s.unregister = make(chan *Connection)
-	s.message = make(chan string)
+	s.message = make(chan letter)
 
 	s.name = servname
 
@@ -33,7 +38,7 @@ func New(servname string) *Serv {
 }
 
 func (s *Serv) Run() {
-	log.Println("server start")
+	log.Println(s.name + " server start")
 	go func() {
 		for {
 			select {
@@ -45,7 +50,9 @@ func (s *Serv) Run() {
 				log.Println("unregister")
 			case msg := <-s.message:
 				for c := range s.conns {
-					c.sendMessage <- msg
+					if c.ws != msg.from {
+						c.sendMessage <- msg.body
+					}
 				}
 			}
 		}
@@ -74,11 +81,10 @@ func sender(c *Connection) {
 			log.Println(err)
 			break
 		}
-		//log.Printf("send:%q\n", buf)
 	}
 }
 
-func receiver(c *Connection, message chan string) {
+func receiver(c *Connection, message chan letter) {
 	var buf string
 	for {
 		err := websocket.Message.Receive(c.ws, &buf)
@@ -87,12 +93,12 @@ func receiver(c *Connection, message chan string) {
 			break
 		}
 		log.Printf("recv:%q\n", buf)
-		message <- buf
+		message <- letter{c.ws, buf}
 	}
 }
 
 func main() {
-	serv := New("chatserver")
+	serv := New("chat")
 	serv.Run()
 
 	http.Handle("/chat", websocket.Handler(serv.clientHandler))

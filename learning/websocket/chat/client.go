@@ -24,7 +24,7 @@ func main() {
 			if n, err = ws.Read(msg); err != nil {
 				log.Fatal(err)
 			}
-			fmt.Printf("Received: %s.\n", msg[:n])
+			fmt.Printf("Received: %s", msg[:n])
 		}
 	}()
 
