@@ -57,13 +57,18 @@ byte.BufferのWriteStringを使いましょう。
 
 ## go コマンド
 
-### example_test.go にあるサンプルを直接実行したい
+### example_test.go にあるサンプルを実行してみたい
 
 標準パッケージなどによく  example_test.go が付属しています。この中の ExampleXXX 関数を直接実行するには次の方法で実行できます：
 
     $ go test -test.run ExampleXXX
 
-参考: http://golang.org/cmd/go/#Description_of_testing_flags
+ただし、テスト実行するだけで、ExampleXXXに書かれている標準出力はコンソールに出力されません。出力結果は `Output:` 以下に書かれている内容です。もし `Output:` の内容と異なれば、そのテストは失敗します。
+
+参考:
+
+* http://golang.org/cmd/go/#Description_of_testing_flags
+* http://golang.org/pkg/testing/#hdr-Examples
 
 ### benchmarkを取りたい
 
