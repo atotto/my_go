@@ -79,6 +79,21 @@ byte.BufferのWriteStringを使いましょう。
 
     $ go test -test.bench Bench -test.benchmem
 
+### test用の実行ファイルをつくっておきたい
+
+通常、Goのテストは：
+
+    $ go test
+
+で実行しますが、`-c`オプションをつけることで実行ファイルを生成することができます：
+
+    $ go test -c
+
+で`<package_name>.test`というファイルが生成され、実行することでテストが走ります。
+
+参考：
+
+* http://golang.org/cmd/go/#hdr-Test_packages
 
 ## パッケージ
 
