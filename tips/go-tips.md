@@ -55,6 +55,19 @@ byte.BufferのWriteStringを使いましょう。
 参考: http://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go
 
 
+### CPUフル活用したい
+
+Goの並行性を最大限に活かすためにはGOMAXPROCSを設定してあげる必要があります。
+
+一番簡単な例は：
+
+    runtime.GOMAXPROCS(runtime.NumCPU())
+
+をmain関数へ記述することで、そのマシンのCPU数を設定します。
+
+参考: http://golang.org/pkg/runtime/#GOMAXPROCS
+
+
 ## go コマンド
 
 ### example_test.go にあるサンプルを実行してみたい
