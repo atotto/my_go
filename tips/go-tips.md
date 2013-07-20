@@ -67,6 +67,28 @@ Goの並行性を最大限に活かすためにはGOMAXPROCSを設定してあ�
 
 参考: http://golang.org/pkg/runtime/#GOMAXPROCS
 
+### コンストラクタみたいなのないの？
+
+`func init`を使いましょう
+
+使い方：
+
+```go:example.go
+package main
+
+import "fmt"
+
+func init() {
+	fmt.Println("init!")
+}
+
+func main() {
+	fmt.Println("Hello!")
+}
+```
+
+動くサンプル：
+http://play.golang.org/p/VrZ5349RqC
 
 ## go コマンド
 
