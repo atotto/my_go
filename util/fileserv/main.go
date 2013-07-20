@@ -12,15 +12,16 @@ type Server struct {
 }
 
 var server Server = Server{}
+var port int
 
 func init() {
-	var port int
 	flag.IntVar(&port, "port", 8000, "port number")
-
-	server.Port = strconv.Itoa(port)
 }
 
 func main() {
+	flag.Parse()
+
+	server.Port = strconv.Itoa(port)
 
 	http.Handle("/", http.FileServer(http.Dir("./")))
 
