@@ -90,6 +90,29 @@ func main() {
 動くサンプル：
 http://play.golang.org/p/VrZ5349RqC
 
+### intからstringへ変換するには？
+
+`strconv`パッケージを使いましょう：
+
+http://play.golang.org/p/UpJ8juCe_V
+
+```go:example.go
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	t := strconv.Itoa(123)
+	fmt.Println(t)
+}
+```
+
+stringからintへ変換するのはAtoiです。C言語でもおなじみですね。
+http://play.golang.org/p/AqoErqRRGE
+
 ## go コマンド
 
 ### example_test.go にあるサンプルを実行してみたい
