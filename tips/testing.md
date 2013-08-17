@@ -1,7 +1,16 @@
-
 ## Tests:テストを書く
 
+パッケージ名 `eg`
+テストパッケージ名は `eg_test` とする
+
+例 https://gist.github.com/atotto/4570162
+
 TODO:書く
+
+参考:
+
+* http://atotto.hatenadiary.jp/entry/2013/01/19/112012
+
 
 ## Benchmarks:ベンチマークを測る
 
