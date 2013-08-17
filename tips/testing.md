@@ -1,5 +1,4 @@
 
-
 ## Tests:テストを書く
 
 TODO:書く
@@ -29,6 +28,8 @@ Output: 以下に書いたものは、それそのものがテスト仕様とな
     $ go test -run Example  
 
 で Example* 全てを実行し、 Output: で書かれたものと比較されます（標準出力には出力されません）。
+
+注!: `// Output:` を書かなければ、Example関数は `go test` で実行されません。
 
 参考資料:
 
