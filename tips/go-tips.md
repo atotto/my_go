@@ -115,18 +115,11 @@ http://play.golang.org/p/AqoErqRRGE
 
 ## go コマンド
 
-### example_test.go にあるサンプルを実行してみたい
+### go test で実行されたテストを知りたい
 
-標準パッケージなどによく  example_test.go が付属しています。この中の ExampleXXX 関数を直接実行するには次の方法で実行できます：
+-vオプションをつけましょう:
 
-    $ go test -test.run ExampleXXX
-
-ただし、テスト実行するだけで、ExampleXXXに書かれている標準出力はコンソールに出力されません。出力結果は `Output:` 以下に書かれている内容です。もし `Output:` の内容と異なれば、そのテストは失敗します。
-
-参考:
-
-* http://golang.org/cmd/go/#Description_of_testing_flags
-* http://golang.org/pkg/testing/#hdr-Examples
+    $ go test -v
 
 ### benchmarkを取りたい
 
