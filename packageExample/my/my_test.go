@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestMyFuncA(t *testing.T) {
+func TestFuncA(t *testing.T) {
 	expected := 123
 	actual := FuncA()
 
@@ -14,7 +14,7 @@ func TestMyFuncA(t *testing.T) {
 	}
 }
 
-func BenchmarkMyFuncA(b *testing.B) {
+func BenchmarkFuncA(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		FuncA()
 	}

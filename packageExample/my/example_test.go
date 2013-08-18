@@ -5,6 +5,13 @@ import (
 	"fmt"
 )
 
+func Example() {
+	// do something
+	fmt.Println("hello")
+	// Output:
+	// hello
+}
+
 func ExampleFuncA_exampleA() {
 	m := FuncA()
 	fmt.Printf("result: %d", m)
