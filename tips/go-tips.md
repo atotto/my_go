@@ -153,13 +153,13 @@ http://play.golang.org/p/AqoErqRRGE
 http://godoc.org/ を活用しましょう。Web上に存在するほとんどの外部パッケージを検索できるはずです。
 
 
-### Doxygenみたいに自分のパッケージもWebで見たい。
+### Doxygenみたいに自分のパッケージをWebブラウザで見たい。
 
 $GOPATH以下に配置すれば、 `godoc` コマンドを使って：
 
     $ godoc -http=:8000
 
-とすれば自分のマシン上にgoのドキュメントページ(http://localhost:8000/pkg)を開設できます。
+として http://localhost:8000 からパッケージへ辿ってみましょう。
 
 ## 学習
 
