@@ -38,19 +38,21 @@ defer文を使いましょう。Javaでいうところのfinallyと似た使い�
 
 byte.BufferのWriteStringを使いましょう。
 
-    package main
-    
-    import "bytes"
-    
-    func main() {
-        var buffer bytes.Buffer
-    
-        for i := 0; i < 1000; i++ {
-            buffer.WriteString("a")
-        }
-    
-        println(buffer.String())
+```go
+package main
+
+import "bytes"
+
+func main() {
+    var buffer bytes.Buffer
+
+    for i := 0; i < 1000; i++ {
+        buffer.WriteString("a")
     }
+
+    println(buffer.String())
+}
+```
 
 参考: http://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go
 
@@ -73,7 +75,7 @@ Goの並行性を最大限に活かすためにはGOMAXPROCSを設定してあ�
 
 使い方：
 
-```go:example.go
+```go
 package main
 
 import "fmt"
@@ -96,7 +98,7 @@ http://play.golang.org/p/VrZ5349RqC
 
 http://play.golang.org/p/UpJ8juCe_V
 
-```go:example.go
+```go
 package main
 
 import (
