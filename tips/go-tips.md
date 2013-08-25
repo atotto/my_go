@@ -56,6 +56,24 @@ func main() {
 
 参考: http://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go
 
+### Javaでいう toString()メソッドみたいなの作れないの？
+
+String()を実装しましょう。
+
+```go
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p Person) String() string {
+	return fmt.Sprintf("%s %d", p.Name, p.Age)
+}
+```
+
+例： http://play.golang.org/p/xkEv3BkmbL
+
+参考: http://golang.org/pkg/fmt/
 
 ### CPUフル活用したい
 
