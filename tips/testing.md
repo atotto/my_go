@@ -25,20 +25,45 @@ TODO:書く
 ```
 func ExampleFuncA() {
         fmt.Println("hello")
-        // Output: hello
+        // Output:
+        // hello
 }
 ```
 
-これは、 `FuncA` 関数に対する例を示すことになります。
+これは、 `FuncA` 関数に対する例を示しています。
 
-`// Output:` でその出力結果を提示できます。
-Output: 以下に書いたものは、それそのものがテスト仕様となります。
+`// Output:` でその出力結果を提示します。
+Output: 以下に書いたものがテスト仕様となりますので:
 
-    $ go test -run Example  
+    $ go test
 
-で Example* 全てを実行し、 Output: で書かれたものと比較されます（標準出力には出力されません）。
+とすることで `// Output:` で書かれた内容と比較されます（標準出力には内容は出力されません。結果のみ出力されます）。
 
-注!: `// Output:` を書かなければ、Example関数は `go test` で実行されません。
+なお、 `// Output:` を書かなければ、Example関数は `go test` で実行されませんので注意が必要です。
+
+
+例の関数の命名規則は、`Exapmle`を付け、それぞれ`F`は関数名、`T`はtype、`T_M`はtype T上のメソッド`M`を指定できます：
+
+```
+func ExampleF() { ... }
+func ExampleT() { ... }
+func ExampleT_M() { ... }
+```
+
+ひとつの関数に複数の例を書きたい場合は、`suffix`に小文字で例の名前を入れます：
+
+```
+func ExampleF_suffix() { ... }
+func ExampleT_suffix() { ... }
+func ExampleT_M_suffix() { ... }
+```
+
+```
+func Example() { ... }
+```
+
+と書くと、そのパッケージ全体としての使用例を書くことができます。
+
 
 参考資料:
 
