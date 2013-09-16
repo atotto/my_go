@@ -1,8 +1,6 @@
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-//
-// This document has been translated at https://code.google.com/p/go/source/browse/cmd/vet/doc.go?repo=tools&r=81e58ded571716d210ea5358d40cd9e10403b98b
 
 /*
 VetはGoのソースコードを調べ、引数が書式文字列(format string)で列んでないようなPrintfの呼び出しの欠陥をレポートします。
@@ -64,6 +62,9 @@ The other flags are:
                 if you have Warn and Warnf functions that take an
                 io.Writer as their first argument, like Fprintf,
                         -printfuncs=Warn:1,Warnf:1
+
+
+本ドキュメントは以下のドキュメントを翻訳しています: https://code.google.com/p/go/source/browse/cmd/vet/doc.go?repo=tools&r=81e58ded571716d210ea5358d40cd9e10403b98b
 
 */
 package main
