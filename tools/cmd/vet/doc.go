@@ -1,11 +1,10 @@
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
+//
+// This document has been translated at https://code.google.com/p/go/source/browse/cmd/vet/doc.go?repo=tools&r=81e58ded571716d210ea5358d40cd9e10403b98b
 
 /*
-
-This document has been translated at https://code.google.com/p/go/source/browse/cmd/vet/doc.go?repo=tools&r=81e58ded571716d210ea5358d40cd9e10403b98b
-
 VetはGoのソースコードを調べ、引数が書式文字列(format string)で列んでないようなPrintfの呼び出しの欠陥をレポートします。
 Vetはヒューリスティック(heuristic)な問題を扱い、すべてのレポートが本当に問題であることは保証しません。しかし、コンパイラで見つけられないエラーを検出することができます。
 
