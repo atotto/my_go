@@ -183,6 +183,13 @@ http://godoc.org/ を活用しましょう。Web上に存在するほとんど�
 
 として http://localhost:8000 からパッケージへ辿ってみましょう。
 
+### ここのパッケージがなにをimport（依存）してるのか知りたい
+
+`go list`をつかってみます：
+
+    $ go list -f '{{range .Imports}}{{println .}}{{end}}' ./
+    
+
 ## 学習
 
 ### テストコードの書き方がわからん。
