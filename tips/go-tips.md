@@ -133,6 +133,14 @@ func main() {
 stringからintへ変換するのはAtoiです。C言語でもおなじみですね。
 http://play.golang.org/p/AqoErqRRGE
 
+### リファクタリングしたい
+
+gofmtをつかいましょう：
+
+    $ gofmt -w -r 'NewData -> NewDataSet' *.go
+
+参考: https://groups.google.com/forum/#!topic/golang-nuts/rvOw7bjK4Rg
+
 ## go コマンド
 
 ### go test で実行されたテストを知りたい
