@@ -133,6 +133,14 @@ func main() {
 stringからintへ変換するのはAtoiです。C言語でもおなじみですね。
 http://play.golang.org/p/AqoErqRRGE
 
+### リファクタリングしたい
+
+gofmtをつかいましょう：
+
+    $ gofmt -w -r 'NewData -> NewDataSet' *.go
+
+参考: https://groups.google.com/forum/#!topic/golang-nuts/rvOw7bjK4Rg
+
 ## go コマンド
 
 ### go test で実行されたテストを知りたい
@@ -182,6 +190,18 @@ http://godoc.org/ を活用しましょう。Web上に存在するほとんど�
     $ godoc -http=:8000
 
 として http://localhost:8000 からパッケージへ辿ってみましょう。
+
+### ここのパッケージがなにをimport（依存）してるのか知りたい
+
+`go list`をつかってみます：
+
+    $ go list -f '{{range .Imports}}{{println .}}{{end}}' ./
+    
+### パッケージの依存をすべて洗い出したい
+
+上の応用。
+
+    $ go list -f '{{range .Deps}}{{println .}}{{end}}' ./
 
 ## 学習
 
