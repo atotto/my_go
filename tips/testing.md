@@ -68,3 +68,9 @@ func Example() { ... }
 参考資料:
 
 * http://golang.org/pkg/testing/#hdr-Examples
+
+
+## テストデータを置きたいんだけど
+
+`testdata`ディレクトリにデータを入れましょう。
+名前を`testdata`としておけば、godoc上へ表示されませんので便利です。
