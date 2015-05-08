@@ -21,6 +21,10 @@ TODO:書く
 
     go test -coverprofile=cover.out && go tool cover -html cover.out && rm -f cover.out
 
+関連する他のパッケージを含めてカバレッジを計測する場合は`-coverpkg`オプションでパッケージを指定します:
+
+    go test -coverprofile=cover.out -coverpkg github.com/atotto/xxx/yyy/... && go tool cover -html cover.out && rm -f cover.out
+
 ## Benchmarks:ベンチマークを測る
 
 TODO:書く
