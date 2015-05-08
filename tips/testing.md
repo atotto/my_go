@@ -11,6 +11,15 @@ TODO:書く
 
 * http://atotto.hatenadiary.jp/entry/2013/01/19/112012
 
+## Tests:テストデータを置きたい
+
+`testdata`ディレクトリにデータを入れましょう。godoc上で表示されません。
+
+## Tests:カバレッジ計測
+
+以下を実行すると、カバレッジ結果がWebブラウザに表示されます:
+
+    go test -coverprofile=cover.out && go tool cover -html cover.out && rm -f cover.out
 
 ## Benchmarks:ベンチマークを測る
 
@@ -70,7 +79,3 @@ func Example() { ... }
 * http://golang.org/pkg/testing/#hdr-Examples
 
 
-## テストデータを置きたいんだけど
-
-`testdata`ディレクトリにデータを入れましょう。
-名前を`testdata`としておけば、godoc上へ表示されませんので便利です。
